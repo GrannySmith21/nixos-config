@@ -119,6 +119,15 @@ in
   # GUI
   # ------------------------------------------
 
+  # Hyprland
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  # Optional, hint electron apps to use wayland:
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   # Enable the X11 windowing system with wayland support
   services.xserver = {
     enable = true;
