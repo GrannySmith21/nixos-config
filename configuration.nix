@@ -178,7 +178,10 @@ in
 
     # Enable Optimus Prime support
     prime = {
-      sync.enable = true;
+      offload = {
+			  enable = true;
+			  enableOffloadCmd = true;
+		  };
       
       # $ sudo lshw -c display
       intelBusId = "PCI:0:2:0";
@@ -241,6 +244,7 @@ in
     python3 # for scripting (add no packages here, use dev shell instead)
     sshpass
     openvpn # VPN
+    import scripts/nvidia-offload.nix
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
