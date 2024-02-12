@@ -50,6 +50,8 @@ in
 
   networking.hostName = "TENVEL9"; # Define your hostname.
 
+  boot.kernelPackages = pkgs.linuxPackages_latest; # latest kernel (fixes audio issues)
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -212,6 +214,7 @@ in
 
       # utilities
       pavucontrol
+      mesa-demos
       networkmanagerapplet
       brightnessctl
       kitty # terminal
@@ -244,7 +247,6 @@ in
     python3 # for scripting (add no packages here, use dev shell instead)
     sshpass
     openvpn # VPN
-    import scripts/nvidia-offload.nix
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
